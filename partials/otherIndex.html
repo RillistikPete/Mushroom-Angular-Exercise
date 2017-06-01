@@ -1,0 +1,20 @@
+<article>
+
+  <header><h1>List of Shrooms</h1></header>
+
+  <section>
+  Find Mushrooms:
+    <input type="text" class="input" ng-model="value"><br><br>
+    <input type="radio" class="radio" ng-model="frikinquery" value="true">Poisonous<br>
+    <input type="radio" class="radio" ng-model="frikinquery" value="false">Non-poisonous<br>
+
+    <div  ng-repeat="item in shrooms | filter: {name:value} | filter: {edible:frikinquery}">
+      <h5>{{item.name}}</h5>
+      <p>{{item.description}}</p>
+
+    </div>
+
+  </section>
+</article>
+
+
